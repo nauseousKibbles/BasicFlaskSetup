@@ -50,3 +50,8 @@ def create():
     db.session.commit()
     return redirect(url_for('home'))
 
+@app.route("/destroy")
+def destroy():
+    db.drop_all()
+    db.session.commit()
+    return redirect(url_for('home'))
